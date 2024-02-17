@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DASHBOARD</title>
+    <link href="/stylesheets/style.css" rel="stylesheet" />
+    <link rel="icon" type="image/x-icon" href="/e_store/elephant_girl_favicon.ico" />
+</head>
+
+<body>
+    <header>
+        <div id="title_and_logo">
+            <h1 id="website_title"><em>ELEPHANT GIRL'S ART SHOP</em></h1>
+            <img src="https://i.imgur.com/zAXb2g4.gif" alt="elephant girl's logo" width="200px" height="200px"
+                id="page_logo" style="object-fit: cover" />
+        </div>
+
+        <nav>
+            <a href="/">HOME</a> | <a href="/login"> LOGIN</a> |
+            <a href="/register"> REGISTER</a> | <a href="/artworks"> ARTWORKS</a> |
+        </nav>
+    </header>
+
+    <h2>Hello <%=specificUser.fullName %>
+    </h2>
+
+    <h1>ARTIST DASHBOARD</h1>
+    <div class="user-artworks-container" id="all-user-artworks-container">
+        <% for (let artwork of allUserArtworks){ %>
+            <div class="individual-artwork-container" id="individual-artwork-container">
+                <div class="artwork-Image"><img src="<%= artwork.image %>" class="individual-artwork-image"/></div>
+                <div class="artwork-title" >
+                    <%=artwork.title %>
+                </div>
+                <div class="artwork-category"> <%= artwork.category %> by <%= artwork.artist %></div>
+                <div class="artwork-price">
+                    ₦ <%= artwork.price %>
+                </div>
+                <a href="/user/my-art/<%= artwork._id %>" class="artwork-see-more-link">SEE MORE</a>
+                <form action="/user/my-art/<%= artwork._id %>" method="get" class="artwork-see-more-form">
+                    <button type="submit" id="dashboard-see-more-button">SEE MORE</button>
+                </form>
+            </div>
+            <% }%>
+    </div>
+
+    <div class="upload-art-container">
+        <h3>UPLOAD YOUR ART</h3>
+        <button onclick="revealUploadForm()" id="upload-form-reveal-button">
+            UPLOAD ART
+        </button>
+        <form action="/user/dashboard/<%= specificUser._id %>/upload" method="post" class="fill-in-form" id="upload-form">
+            <button id="upload-form-close-button" onclick="hideUploadForm()">
+                X</button><br />
+            <label for="artworkTitleInput">TITLE OF ARTWORK: </label>
+            <input type="text" id="artworkTitleInput" name="title" /> <br />
+            <label for="artistInput">NAME OF ARTIST: </label>
+            <input type="text" id="artistInput" name="artist" /> <br />
+            <label for="imageInput">IMAGE LINK: </label>
+            <input type="text" id="imageInput" name="image" /> <br />
+            <label for="priceInput">PRICE: </label>
+            <input type="number" id="priceInput" name="price" /> <br />
+            <div class="product_category_input">
+                <label for="categoryInput">CATEGORY: </label>
+                <select id="categoryInput" name="category">
+                    <option value="Oil on Canvas">OIL ON CANVAS</option>
+                    <option value="Print">PRINT</option>
+                    <option value="Digital">DIGITAL</option>
+                </select>
+            </div>
+            <label for="descriptionInput">DESCRIPTION: </label><br />
+            <textarea cols="30" rows="5" id="descriptionInput" name="description"></textarea><br />
+            <button type="submit">UPLOAD</button>
+        </form>
+    </div>
+
+    <h3>EDIT ART</h3>
+    <form></form>
+    <h3>DELETE ART</h3>
+
+    <script>
+        const uploadForm = document.getElementById("upload-form");
+        const allUserArtworks = document.getElementById(
+            "all-user-artworks-container"
+        );
+        const uploadFormCloseButton = document.getElementById(
+            "upload-form-close-button"
+        );
+        const revealUploadForm = () => {
+            allUserArtworks.style.visibility = "hidden";
+            uploadForm.style.visibility = "visible";
+        };
+        const hideUploadForm = () => {
+            uploadForm.style.visibility = "hidden";
+            allUserArtworks.style.visibility = "visible";
+        };
+        uploadFormCloseButton.addEventListener("click", (event) => {
+            event.preventDefault();
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,122 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: black;
+  background-image: url("https://i.imgur.com/nOHsfB9.jpg"); 
+  /*background-image: url("https://i.imgur.com/H0aX4jM.gif"); */
+  
+ 
+}
+
+a {
+  color: navy;
+  font-weight: bolder;
+}
+
+header{
+  color: purple;
+  background-color: white;
+  background-image: url('https://img.freepik.com/free-vector/engraving-hand-drawn-botanical-pattern_23-2148975165.jpg');
+  
+  background-repeat: repeat-x;
+}
+#title_and_logo{
+  display: flex;
+}
+#website_title{
+  margin-top: 90px;
+}
+.body_div{
+  border: none;
+}
+.fill-in-form{
+  background-color: white;
+  width: 17rem;
+  height: 12rem;
+  position: fixed;
+  left: 35%;
+  top: 40vh;
+  border: 3px solid purple;
+  border-radius: 15%;
+  padding: 2rem;
+}
+
+/*ARTIST DASHBOARD*/
+
+.user-artworks-container{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+ 
+}
+
+.individual-artwork-container{
+  margin: 2rem;
+}
+
+.individual-artwork-image{
+  height: 30vh;
+  width: 100%;
+  border: 6px solid violet;
+}
+
+.artwork-title{
+  color:indigo;
+  font-size: 1.5vw;
+  font-weight: 650;
+}
+
+.artwork-category{
+  color: black;
+  font-size: 1.2vw;
+  font-family: 600;
+}
+.artwork-price{
+  color: blue;
+  font-size: 1vw;
+  font-weight: 600;
+}
+
+#upload-form{
+  visibility: hidden;
+  width: 18rem;
+  height: 18rem;
+}
+#upload-form-reveal-button{
+  background-color: orangered;
+  color: gold;
+  font-weight: bold;
+  width: 7rem;
+  height: 2rem;
+  border-radius: 10%;
+  border: 1px solid blueviolet;
+}
+
+#upload-form-close-button{
+  color: red;
+  border: 1px solid black;
+  border-radius: 60%;
+  background: none;
+}
+
+
+
+
+
+
+
+/* NOT FOUND PAGE*/
+.not-found-image{
+  height: 100vh;
+  width: 50rem;
+  object-fit: cover;
+  object-position: 50%, 0%;
+
+}
+.not-found-message{
+  color: palevioletred;
+  font-weight: bolder;
+  position: absolute;
+  bottom:10vh;
+  left: 23%;
+}

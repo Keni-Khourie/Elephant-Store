@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='/stylesheets/style.css' rel='stylesheet'/>
+    <title>REGISTER</title>
+    <link rel="icon" type="image/x-icon" href="/e_store/elephant_girl_favicon.ico">
+</head>
+<body>
+    <header>
+        <div id="title_and_logo">
+            <h1 id="website_title"><em>ELEPHANT GIRL'S ART SHOP</em></h1>
+            <img src="https://i.imgur.com/zAXb2g4.gif" alt="elephant girl's logo" width="200px" height="200px" id="page_logo" style="object-fit:cover" >
+        </div>
+    
+    <nav>
+        <a href="/">HOME</a> |
+        <a href="/login"> LOGIN</a> |
+        <a href="/register"> REGISTER</a> |
+        <a href="/artworks"> ARTWORKS</a> |
+    </nav>
+    </header>
+    
+
+
+
+    <h1>REGISTER PAGE</h1>
+    <a href="/auth/google">USE GOOGLE</a>
+
+    <div>
+        <h3><em>REGISTER WITH GOOGLE</em></h3>
+        <div id="button_and_logo">
+            <form action="/auth/google" method="get">
+                <button>REGISTER WITH GOOGLE</button>
+    
+            </form>
+        </div>
+        
+    </div>
+
+    <h3>REGISTER WITH EMAIL</h3>
+    <form action="/register" method="post" class="fill-in-form" id="register-form">
+        <label for="fullNameInput">FULL NAME: </label> <input type="text" id="fullNameInput" name="fullName"> <br>
+        <label for="emailInput">EMAIL: </label> <input type="email" id="emailInput" name="email"> <br>
+        <label for="telephoneInput">TELEPHONE: </label> <input type="text" id="telephoneInput" name="telephone"> <br>
+        <label for="addressInput">ADDRESS: </label> <input type="text" id="addressInput" name="address"> <br>
+        <label for="passwordInput">PASSWORD: </label><input type="password" id="passwordInput" name="password"><br>
+        <label for="confirmPasswordInput"> CONFIRM PASSWORD: </label><input type="password" id="confirmPasswordInput" name="confirmPassword"><br>
+        
+        <button type="submit">REGISTER</button>
+     </form>
+
+</body>
+</html>
+

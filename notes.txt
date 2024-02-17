@@ -1,0 +1,16 @@
+1. On the artist's dashboard, it should should show all the artworks that belong to that artist.
+2. The main Home page should show a few artworks (hard-coded) and should then have a link to "All Artworks" which should display all the artworks of all the artists
+The class name for all the forms that should be at the centre of the page should be "page form". They could then each have their own respective ids.
+The admin should be able to delete users.
+In your model/schema one more user type should be Admin.
+
+For Admins:
+        - You could have an admin register and login page. Once the Admin Registers they would be added to the users table.
+        -You could create a passcode table/schema. First the admin types in the code and if present in the table, they are redirected to the admin-login page. OR BETTER YET when registering, there is a new field for the passcode. if it matches any of the passcodes in the table, then it the user is added as an admin.
+        -You DONT need to have more than one table. only one table would be needed, it's just that the user-type would be admin. 
+Could create an update profile section/link/endpoint to allow users who signed up with google, update their work (But do that later)
+
+
+password: ZOJPUQ5NAkU0xz7e
+
+connection string: mongodb+srv://kehindekhourie:ZOJPUQ5NAkU0xz7e@cluster0.tv3jsvx.mongodb.net/
