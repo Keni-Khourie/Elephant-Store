@@ -12,9 +12,9 @@
 <body>
     <header>
         <div id="title_and_logo">
-            <h1 id="website_title"><em>ELEPHANT GIRL'S ART SHOP</em></h1>
-            <img src="https://i.imgur.com/zAXb2g4.gif" alt="elephant girl's logo" width="200px" height="200px"
-                id="page_logo" style="object-fit: cover" />
+            <h1 id="website_title"><em>ELEPHANT ART</em></h1>
+            <!-- <img src="https://i.imgur.com/zAXb2g4.gif" alt="elephant girl's logo" width="200px" height="200px"
+                id="page_logo" style="object-fit: cover" /> -->
         </div>
 
         <nav>
@@ -31,16 +31,14 @@
         <% for (let artwork of allUserArtworks){ %>
             <div class="individual-artwork-container" id="individual-artwork-container">
                 <div class="artwork-Image"><img src="<%= artwork.image %>" class="individual-artwork-image"/></div>
-                <div class="artwork-title" >
-                    <%=artwork.title %>
-                </div>
-                <div class="artwork-category"> <%= artwork.category %> by <%= artwork.artist %></div>
+                <div><em class="artwork-title"><%= artwork.title %></em> </div>
+                <div class="artwork-artist"> by <%= artwork.artist %></div>
+                <div class="artwork-category"> <%= artwork.category %> </div>
                 <div class="artwork-price">
-                    ₦ <%= artwork.price %>
+                    ₦<%= artwork.price.toLocaleString() %>
                 </div>
-                <a href="/user/my-art/<%= artwork._id %>" class="artwork-see-more-link">SEE MORE</a>
                 <form action="/user/my-art/<%= artwork._id %>" method="get" class="artwork-see-more-form">
-                    <button type="submit" id="dashboard-see-more-button">SEE MORE</button>
+                    <button type="submit" class="dashboard-see-more-button">SEE MORE</button>
                 </form>
             </div>
             <% }%>
@@ -48,11 +46,11 @@
 
     <div class="upload-art-container">
         <h3>UPLOAD YOUR ART</h3>
-        <button onclick="revealUploadForm()" id="upload-form-reveal-button">
+        <button onclick="revealUploadForm()" class="reveal-form-button" id="upload-form-reveal-button">
             UPLOAD ART
         </button>
         <form action="/user/dashboard/<%= specificUser._id %>/upload" method="post" class="fill-in-form" id="upload-form">
-            <button id="upload-form-close-button" onclick="hideUploadForm()">
+            <button class="close-form-button" id="upload-form-close-button" onclick="hideUploadForm()">
                 X</button><br />
             <label for="artworkTitleInput">TITLE OF ARTWORK: </label>
             <input type="text" id="artworkTitleInput" name="title" /> <br />
@@ -68,7 +66,8 @@
                     <option value="Oil on Canvas">OIL ON CANVAS</option>
                     <option value="Print">PRINT</option>
                     <option value="Digital">DIGITAL</option>
-                </select>
+                    <option value="Water Colour">WATER COLOUR</option>
+                </select> 
             </div>
             <label for="descriptionInput">DESCRIPTION: </label><br />
             <textarea cols="30" rows="5" id="descriptionInput" name="description"></textarea><br />

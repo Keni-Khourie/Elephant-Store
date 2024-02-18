@@ -1,11 +1,26 @@
 body {
-  padding: 50px;
+  padding: 2rem 2rem;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  background-color: black;
-  background-image: url("https://i.imgur.com/nOHsfB9.jpg"); 
+  background-color: white;
+  background-repeat: no-repeat;
+  background-image: url("https://i.imgur.com/zAXb2g4.gif");
+  /* background-image: url("https://i.imgur.com/nOHsfB9.jpg");  */
   /*background-image: url("https://i.imgur.com/H0aX4jM.gif"); */
-  
- 
+  background-attachment: fixed;
+  background-position: center;
+}
+
+
+.home-body{
+  padding: 2rem 2rem;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: white;
+  background-repeat: repeat-x;
+  background-image: url("https://i.imgur.com/nOHsfB9.jpg"); 
+  /* background-image: url("https://i.imgur.com/H0aX4jM.gif"); */
+  /* background-image: url("https://i.imgur.com/zAXb2g4.gif"); */
+  /* background-attachment: fixed;
+  background-position: center; */
 }
 
 a {
@@ -15,17 +30,34 @@ a {
 
 header{
   color: purple;
+  /* background-color: white; */
+  /* background-image: url('https://img.freepik.com/free-vector/engraving-hand-drawn-botanical-pattern_23-2148975165.jpg');
+  
+  background-repeat: repeat-x; */
+}
+
+.home-header{
+  color: purple;
   background-color: white;
   background-image: url('https://img.freepik.com/free-vector/engraving-hand-drawn-botanical-pattern_23-2148975165.jpg');
-  
   background-repeat: repeat-x;
 }
-#title_and_logo{
+
+.title_and_logo{
   display: flex;
 }
-#website_title{
+.website_title{
   margin-top: 90px;
 }
+.page-message{
+  color:gold;
+  font-size: 1.4vw;
+  font-weight: 700;
+}
+
+
+
+
 .body_div{
   border: none;
 }
@@ -40,6 +72,59 @@ header{
   border-radius: 15%;
   padding: 2rem;
 }
+
+
+/*HOME PAGE*/
+.homeImages-container{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.homeImages-individual-container{
+
+}
+
+.individual-homeImage-container{
+  margin: 2rem;
+}
+
+.homeImages-image{
+  height: 30vh;
+  width: 100%;
+  border: 6px solid violet;
+}
+
+.homeImages-title{
+  color:indigo;
+  font-size: 1.5vw;
+  font-weight: 650;
+}
+
+.homeImages-artist{
+  color:red;
+  font-size: 1.2vw;
+  font-weight: 600;
+}
+
+.homeImages-category{
+  color: black;
+  font-size: 1.2vw;
+  font-family: 600;
+}
+
+.homeImages-price{
+  color: blue;
+  font-size: 1vw;
+  font-weight: 600;
+}
+
+/* END OF HOME PAGE*/
+
+
+
+
+
 
 /*ARTIST DASHBOARD*/
 
@@ -66,6 +151,13 @@ header{
   font-weight: 650;
 }
 
+.artwork-artist{
+  color:red;
+  font-size: 1.2vw;
+  font-weight: 600;
+  margin-left: 2rem;
+}
+
 .artwork-category{
   color: black;
   font-size: 1.2vw;
@@ -77,12 +169,23 @@ header{
   font-weight: 600;
 }
 
+.dashboard-see-more-button{
+  color:blueviolet;
+  font-weight: 700;
+  background-color: aqua;
+  border-radius: 20rem;
+  border: 3px solid pink;
+  height: 3vh;
+  width: 6rem;
+  margin-left: 30%;
+}
+
 #upload-form{
   visibility: hidden;
   width: 18rem;
   height: 18rem;
 }
-#upload-form-reveal-button{
+.reveal-form-button{
   background-color: orangered;
   color: gold;
   font-weight: bold;
@@ -92,16 +195,20 @@ header{
   border: 1px solid blueviolet;
 }
 
-#upload-form-close-button{
+.close-form-button{
   color: red;
   border: 1px solid black;
   border-radius: 60%;
   background: none;
 }
+/* END OF ARTIST DASHBOARD*/
 
 
-
-
+/*SPECIFIC ARTWORK PAGE*/
+#update-form{
+  visibility: hidden;
+}
+/**/
 
 
 

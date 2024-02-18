@@ -8,12 +8,14 @@
     <link rel="icon" type="image/x-icon" href="/e_store/elephant_girl_favicon.ico">
 </head>
 
-<body>
-    <header>
-        <div id="title_and_logo">
-            <h1 id="website_title"><em>ELEPHANT GIRL'S ART SHOP</em></h1>
+<body class="home-body">
+    <header class="home-header">
+        <div class="title_and_logo">
+            <h1 class="website_title"><em>ELEPHANT ART</em></h1>
+            
             <img src="https://i.imgur.com/zAXb2g4.gif" alt="elephant girl's logo" width="200px" height="200px" id="page_logo" style="object-fit:cover" >
         </div>
+        <div class="page-message">Post your elephant art today!</div>
     
     <nav>
         <a href="/">HOME</a> |
@@ -27,9 +29,17 @@
 
 
 
-    <div>
-        <h1>TEST LINK</h1>
-        <a href="/test"> TEST </a>
+    <div class="homeImages-container">
+        <% for (let image of homeImages){ %>
+            <div class="individual-homeImage-container">
+                <div> <img src="<%= image.image %> " class="homeImages-image"> </div>
+                <div><em class="homeImages-title"><%= image.title %></em> </div>
+                <div class="homeImages-artist"> by <%= image.artist %></div>
+                <div class="homeImages-category"><%= image.category %></div>
+                <div class="homeImages-price"> ₦<%= image.price.toLocaleString() %> </div>
+                
+            </div>
+            <% } %>
     </div>
 
 
@@ -40,6 +50,7 @@
     <footer>
         <h4>Contact Us:</h4>
         <p>Copyright of Kehinde Khourie</p>
+        <a href="/test">TEST</a>
     </footer>
 </body>
 

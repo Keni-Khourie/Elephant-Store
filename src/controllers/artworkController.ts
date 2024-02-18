@@ -12,11 +12,14 @@ const getAllArtworks = async (req:Request, res: Response)=>{
 
     try {
        const allArtworks = await Artwork.find({})
+       res.render("allArtworksPublic.ejs", {allArtworks})
+       /* 
        if (allArtworks.length == 0){
        res.render("artistworks.ejs", {getMessages})
        }else{
         res.render("", {allArtworks})
        }
+       */
     } catch (error) {
         console.log(error);
     }
@@ -42,6 +45,31 @@ const getSpecificArtwork = async (req:Request, res: Response)=>{
 
 }
 //getSpecificArtwork could be used by both artist and all users
+
+
+//GET SPECIFIC ARTWORK FOR THE PUBLIC VIEW: THIS DOES NOT ALLOW FOR DELETION OR UPDATING OF THE IMAGE
+
+const getSpecificArtworkPublic = async (req:Request, res: Response)=>{
+    const getSpecificMessages = {
+        missing: `Artwork not found`,
+        failure: `Problem Loading Artwork`
+    }
+    const artworkID = req.params.id
+
+    const specificArtwork = await Artwork.findById(artworkID)
+
+    if(!specificArtwork){
+        res.status(404).send(`<h1>ARTWORK NOT FOUND </h1>`)
+        // res.render('artistart.ejs', {getSpecificMessages})
+        throw new Error(`Artwork not found`)
+    }
+    res.status(200).render("specificArtworkPublic.ejs", {specificArtwork})
+
+}
+
+
+
+
 //INCLUDE A FUNCTUON THAT WILL RETURN ONLY THE ARTWORKS CREATED BY THAT ARTIST
 
 const getUserArtworks = async(req:Request, res:Response)=>{
@@ -160,5 +188,5 @@ export {
     createArtwork,
     updateArtwork,
     deleteArtwork,
-
+    getSpecificArtworkPublic,
 }

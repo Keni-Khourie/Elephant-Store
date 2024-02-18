@@ -10,6 +10,11 @@ For Admins:
         -You DONT need to have more than one table. only one table would be needed, it's just that the user-type would be admin. 
 Could create an update profile section/link/endpoint to allow users who signed up with google, update their work (But do that later)
 
+The "Dashboard" link in the home page should take logged in users to their dashboard and redirect non-logged in users to the login page
+The LOGIN page should include a link to register i.e (not logged in? Register here)
+The REGISTER page should include a link to login i.e (Already Registered? Log in)
+
+
 
 password: ZOJPUQ5NAkU0xz7e
 

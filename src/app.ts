@@ -41,6 +41,9 @@ app.use(cookieParser());
 
 app.use("/", indexRouter)
 app.use("/user", userRouter)
+app.get("/test", (req:Request, res:Response)=>{
+  res.render("test.ejs")
+})
 
 
 

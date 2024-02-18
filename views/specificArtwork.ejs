@@ -7,18 +7,21 @@
     <link href='/stylesheets/style.css' rel='stylesheet'/>
     <link rel="icon" type="image/x-icon" href="/e_store/elephant_girl_favicon.ico">
 </head>
-<body>
-    <header>
-        <div id="title_and_logo">
-            <h1 id="website_title"><em>ELEPHANT GIRL'S ART SHOP</em></h1>
+<body class="home-body">
+    <header class="home-header">
+        <div class="title_and_logo">
+            <h1 class="website_title"><em>ELEPHANT ART</em></h1>
+            
             <img src="https://i.imgur.com/zAXb2g4.gif" alt="elephant girl's logo" width="200px" height="200px" id="page_logo" style="object-fit:cover" >
         </div>
+        <div class="page-message">Post your elephant art today!</div>
     
     <nav>
         <a href="/">HOME</a> |
         <a href="/login"> LOGIN</a> |
         <a href="/register"> REGISTER</a> |
         <a href="/artworks"> ARTWORKS</a> |
+        <a href="/user/dashboard/<%= specificArtwork.user %>"> MY DASHBOARD</a>
     </nav>
     </header>
     <h1> INDIVIDUAL ARTWORK</h1>
@@ -28,9 +31,10 @@
     <img src="<%=specificArtwork.image  %>">
     <h3>Artist: <%= specificArtwork.artist %></h3>
     <p><%= specificArtwork.category %></p>
+    <h5>PRICE: <%= specificArtwork.price.toLocaleString() %></h5>
     <h4>Description:</h4> <br>
     <p><%= specificArtwork.description %></p>
-    <h5><%= specificArtwork.price %></h5>
+    
 
     </div>
     
@@ -38,13 +42,13 @@
     
      
     <h3>UPDATE ART</h3>
-    <button onclick=revealUpdateForm() id="update-form-reveal-button">UPLOAD ART</button>
-    <form action="user/dashboard/<%= specificUser._id %>/update" method="post" class="fill-in-form" id="update-form">
-        <button id="update-form-close-button" onclick=hideUpdateForm() >X</button><br/>
-        <label for="artworkTitleInput">TITLE OF ARTWORK: </label> <input type="text" id="artworkTitleInput" name="title"> <br>
-        <label for="artistInput">NAME OF ARTIST: </label> <input type="text" id="artistInput" name="artist"> <br>
-        <label for="imageInput">IMAGE LINK: </label> <input type="text" id="imageInput" name="image"> <br>
-        <label for="priceInput">PRICE: </label> <input type="number" id="priceInput" name="price"> <br>
+    <button onclick=revealUpdateForm() class="reveal-form-button" id="update-form-reveal-button" >UPDATE ART</button>
+    <form action="user/dashboard/<%= specificArtwork.user %>/update" method="post" class="fill-in-form" id="update-form">
+        <button class="close-form-button" id="update-form-close-button" onclick=hideUpdateForm() >X</button><br/>
+        <label for="artworkTitleInput">TITLE OF ARTWORK: </label> <input type="text" id="artworkTitleInput" name="title" placeholder="<%= specificArtwork.title  %>"> <br>
+        <label for="artistInput">NAME OF ARTIST: </label> <input type="text" id="artistInput" name="artist" placeholder="<%= specificArtwork.artist  %>"> <br>
+        <label for="imageInput">IMAGE LINK: </label> <input type="text" id="imageInput" name="image" placeholder="<%= specificArtwork.image %>"> <br>
+        <label for="priceInput">PRICE: </label> <input type="number" id="priceInput" name="price" placeholder="<%= specificArtwork.price  %>"> <br>
         <div class="product_category_input">
             <label for="categoryInput">CATEGORY: </label> 
             <select id="categoryInput" name="category">
@@ -54,7 +58,7 @@
             </select>
          </div>
         <label for="descriptionInput">DESCRIPTION: </label><br>
-        <textarea cols="30" rows="5" id="descriptionInput" name="description" ></textarea><br>
+        <textarea cols="30" rows="5" id="descriptionInput" name="description" placeholder="<%= specificArtwork.description %>" ></textarea><br>
         <button type="submit">UPDATE</button>
     </form>
     

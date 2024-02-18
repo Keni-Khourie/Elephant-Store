@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DASHBOARD</title>
+    <link href="/stylesheets/style.css" rel="stylesheet" />
+    <link rel="icon" type="image/x-icon" href="/e_store/elephant_girl_favicon.ico" />
+</head>
+
+<body>
+    <header>
+        <div id="title_and_logo">
+            <h1 id="website_title"><em>ELEPHANT ART</em></h1>
+            <!-- <img src="https://i.imgur.com/zAXb2g4.gif" alt="elephant girl's logo" width="200px" height="200px"
+                id="page_logo" style="object-fit: cover" /> -->
+        </div>
+
+        <nav>
+            <a href="/">HOME</a> | <a href="/login"> LOGIN</a> |
+            <a href="/register"> REGISTER</a> | <a href="/artworks"> ARTWORKS</a> 
+        </nav>
+    </header>
+
+    </h2>
+
+    <h1>ALL ARTWORKS</h1>
+    <div class="user-artworks-container" id="all-user-artworks-container">
+        <% for (let artwork of allArtworks){ %>
+            <div class="individual-artwork-container" id="individual-artwork-container">
+                <div class="artwork-Image"><img src="<%= artwork.image %>" class="individual-artwork-image"/></div>
+                <div><em class="artwork-title"><%= artwork.title %></em> </div>
+                <div class="artwork-artist"> by <%= artwork.artist %></div>
+                <div class="artwork-category"> <%= artwork.category %> </div>
+                <div class="artwork-price">
+                    ₦<%= artwork.price.toLocaleString() %>
+                </div>
+                <form action="/artworks/<%= artwork._id %>" method="get" class="artwork-see-more-form">
+                    <button type="submit" class="dashboard-see-more-button">SEE MORE</button>
+                </form>
+            </div>
+            <% }%>
+    </div>
+
+
+   
+</body>
+
+</html>
